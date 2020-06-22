@@ -3,10 +3,7 @@ package ru.skillbranch.devintensive
 import org.junit.Test
 
 import org.junit.Assert.*
-import ru.skillbranch.devintensive.extensions.TimeUnits
-import ru.skillbranch.devintensive.extensions.add
-import ru.skillbranch.devintensive.extensions.format
-import ru.skillbranch.devintensive.extensions.toUserView
+import ru.skillbranch.devintensive.extensions.*
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
 import ru.skillbranch.devintensive.models.User
@@ -131,6 +128,16 @@ class ExampleUnitTest {
 
         println(Utils.transliteration("Женя Стереотипов"))
         println(Utils.transliteration("Amazing Петр","_"))
+    }
+
+    @Test
+    fun test_truncate() {
+        val testString = "123456789_123456789_123456789"
+
+        println(testString.truncate())
+        println(testString.truncate(10))
+        println("A       ".truncate(3))
+        println("1234  789".truncate(6))
     }
 
 }
