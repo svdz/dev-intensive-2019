@@ -10,6 +10,7 @@ import ru.skillbranch.devintensive.extensions.toUserView
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
 import ru.skillbranch.devintensive.models.User
+import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
 
 /**
@@ -114,5 +115,22 @@ class ExampleUnitTest {
         println(imageMessage.formatMessage())
     }
 
+
+    @Test
+    fun test_toInitials() {
+        println("${Utils.toInitials("john" ,"doe")}")
+        println("${Utils.toInitials("John", null)}")
+        println("${Utils.toInitials(null, null)}")
+        println("${Utils.toInitials(" ", "")}")
+    }
+
+    @Test
+    fun test_transliteration() {
+//        Utils.transliteration("Женя Стереотипов") //Zhenya Stereotipov
+//        Utils.transliteration("Amazing Петр","_") //Amazing_Petr
+
+        println(Utils.transliteration("Женя Стереотипов"))
+        println(Utils.transliteration("Amazing Петр","_"))
+    }
 
 }
