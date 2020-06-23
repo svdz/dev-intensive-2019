@@ -140,4 +140,34 @@ class ExampleUnitTest {
         println("1234  789".truncate(6))
     }
 
+//    @Test
+//    fun test_stripHtml() {
+//        println("<p class=\"title\">Образовательное IT-сообщество Skill Branch</p>".stripHtml())
+//    }
+
+    @Test
+    fun test_builder() {
+        val user = User.Builder().firstName("Apple")
+            .lastName("Seed")
+            .lastVisit(Date())
+            .build()
+
+        val user2 = User.Builder().firstName("Android")
+            .lastName("Can")
+            .lastVisit(Date())
+            .build()
+
+        println(user)
+        println(user2)
+    }
+
+    @Test
+    fun test_time_plural() {
+        println(TimeUnits.HOUR.plural(19))
+        println(TimeUnits.SECOND.plural(1))
+        println(TimeUnits.MINUTE.plural(4))
+        println(TimeUnits.DAY.plural(222))
+    }
+
+
 }
